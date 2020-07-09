@@ -23,11 +23,11 @@ end
 
 def get_english_meaning(path, emoticon)
   emoticons = load_library(path)
-  result = emoticons["get_meaning"][emoticon] #the same above but change get_meaning
-  if result
-    result
+  result = emoticons.select{|key, hash| hash[:english] == emoticon }
+  if result.length > 0
+    return result.keys[0]
   else
-    "Sorry, that emoticon was not found"
+    return "Sorry, that emoticon was not found"
   end
 end
 
