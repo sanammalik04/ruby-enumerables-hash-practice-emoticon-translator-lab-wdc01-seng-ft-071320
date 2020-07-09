@@ -23,7 +23,7 @@ end
 
 def get_english_meaning(path, emoticon)
   emoticons = load_library(path)
-  result = emoticons.select{|key, hash| hash[:english] == emoticon }
+  result = emoticons.select{|key, hash| hash[:japanese] == emoticon }
   if result.length > 0
     return result.keys[0]
   else
