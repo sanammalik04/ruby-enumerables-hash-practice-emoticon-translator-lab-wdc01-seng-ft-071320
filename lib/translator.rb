@@ -13,7 +13,8 @@ end
 
 def get_japanese_emoticon(path, emoticon)
   emoticons = load_library(path)
-  result = clients.select{|key, hash| hash[:english] == emoticon }[key][:japanese]
+  result = clients.select{|key, hash| hash[:english] == emoticon }
+  print result
   if result
     return result
   else
